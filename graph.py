@@ -7,15 +7,15 @@ class Graph():
         self.numVertex=numVertex
         self.adjacencyMatrix=np.zeros((self.numVertex,self.numVertex))
 
-    def add_edge(self,v1,v2):
-        self.adjacencyMatrix[v1][v2]=1
+    def add_edge(self,v1,v2,w=1):
+        self.adjacencyMatrix[v1][v2]=w
         if not self.isDirected:
-            self.adjacencyMatrix[v2][v1]=1
+            self.adjacencyMatrix[v2][v1]=w
 
     def get_adjacency_list(self,v):
         adjacency_list=[]
         for i in range(self.numVertex):
-            if self.adjacencyMatrix[v][i]==1:
+            if self.adjacencyMatrix[v][i]!=0:
                 adjacency_list.append(i)
         return adjacency_list
 
