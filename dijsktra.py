@@ -48,20 +48,38 @@ def dijsktra(graph,start_v,end_v):
 
 
 g=Graph(8)
-g.add_edge(0,1)
-g.add_edge(0,2)
-g.add_edge(1,3)
-g.add_edge(3,5)
-g.add_edge(0,4)
-g.add_edge(4,6)
-g.add_edge(2,7)
-g.add_edge(0,5,2)
+#g.add_edge(0,1)
+#g.add_edge(0,2)
+#g.add_edge(1,3)
+#g.add_edge(3,5)
+#g.add_edge(0,4)
+#g.add_edge(4,6)
+#g.add_edge(2,7)
+#g.add_edge(0,5,2)
+
+
+g.add_edge(0,1,1)
+g.add_edge(1,2,2)
+
+g.add_edge(1,3,6)
+g.add_edge(2,3,2)
+g.add_edge(1,4,3)
+g.add_edge(3,5,1)
+g.add_edge(5,4,5)
+g.add_edge(3,6,1)
+g.add_edge(6,7,1)
+g.add_edge(0,7,8)
+
+
+#
+#distance_table=get_distance_table(g,0)
+#print(distance_table)
+
+
+dijsktra(g,0,6)
+dijsktra(g,4,7)
+dijsktra(g,7,0)
 
 
 
-distance_table=get_distance_table(g,0)
-print(distance_table)
-
-
-dijsktra(g,0,5)
 
